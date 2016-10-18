@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SNSSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +19,77 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WCY-ee-iUT">
+                                <frame key="frameInset" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="W6p-vs-tZu"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="wxS-g6-pYj">
+                                        <connections>
+                                            <action selector="cameraButtonTappedWithSender:" destination="BYZ-38-t0r" id="Atj-b8-6eT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="M82-16-GwM"/>
+                                    <barButtonItem title="保存" id="Tz3-5R-gHL">
+                                        <connections>
+                                            <action selector="saveButtonTappedWithSender:" destination="BYZ-38-t0r" id="glk-hd-b46"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Tvp-6c-GLX"/>
+                                    <barButtonItem title="選択" id="SmF-WN-EbR">
+                                        <connections>
+                                            <action selector="selectionButtonTapped:" destination="BYZ-38-t0r" id="z1f-j2-1ed"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Q2L-Nj-05O"/>
+                                    <barButtonItem systemItem="action" id="6Cj-Wx-FII">
+                                        <connections>
+                                            <action selector="otherButtonTappedWithSender:" destination="BYZ-38-t0r" id="wwi-kY-o5u"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jug-AJ-10W">
+                                <frame key="frameInset" minY="-1" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZAq-BC-lBc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhb-3i-G7Q">
+                                <frame key="frameInset" minY="28" width="375" height="595"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fhb-3i-G7Q" secondAttribute="height" multiplier="75:119" id="guV-B0-UAq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jug-AJ-10W" secondAttribute="trailing" id="98t-g8-eDu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WCY-ee-iUT" secondAttribute="bottom" id="AES-wx-DDo"/>
+                            <constraint firstAttribute="trailing" secondItem="fhb-3i-G7Q" secondAttribute="trailing" id="Dcs-Wa-Ovt"/>
+                            <constraint firstItem="jug-AJ-10W" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="NSU-7H-mRa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WCY-ee-iUT" secondAttribute="trailing" id="PPG-1R-9Nm"/>
+                            <constraint firstItem="fhb-3i-G7Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Qe0-ea-Q1r"/>
+                            <constraint firstItem="jug-AJ-10W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RxI-X5-Pm6"/>
+                            <constraint firstItem="WCY-ee-iUT" firstAttribute="top" secondItem="fhb-3i-G7Q" secondAttribute="bottom" id="YRt-si-d8r"/>
+                            <constraint firstItem="fhb-3i-G7Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f97-Bx-q5m"/>
+                            <constraint firstItem="WCY-ee-iUT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jIV-5n-QC6"/>
+                            <constraint firstItem="fhb-3i-G7Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tkr-tI-SW6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="fhb-3i-G7Q" id="0Cw-W8-H6F"/>
+                        <outlet property="label" destination="jug-AJ-10W" id="3m8-XZ-IWP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
