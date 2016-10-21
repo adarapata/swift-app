@@ -8,6 +8,8 @@
 
 import UIKit
 import Social
+import RxSwift
+
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
